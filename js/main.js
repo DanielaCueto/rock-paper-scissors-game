@@ -29,7 +29,7 @@ const randomGenerator = function () {
     computerChoice = "paper";
   }
   if (generated === 2) {
-    computerChoice = "Scissors";
+    computerChoice = "scissors";
   }
   computerSelected.innerHTML = `Computer choice: ${computerChoice}`;
   console.log(generated);
@@ -50,21 +50,19 @@ const buttonClicked = function (ev) {
 };
 
 function getResult() {
-  if (
+  if (userChoice === computerChoice) {
+    /* if (
     (userChoice === "rock" && computerChoice === "rock") ||
     (userChoice === "paper" && computerChoice === "paper") ||
     (userChoice === "scissors" && computerChoice === "scissors")
-  ) {
-    resultDisplay.innerHTML = `It's a draw!`;
-  }
-  if (
+  ) */ resultDisplay.innerHTML = `It's a draw!`;
+  } else if (
     (userChoice === "rock" && computerChoice === "paper") ||
     (userChoice === "paper" && computerChoice === "scissors") ||
     (userChoice === "scissors" && computerChoice === "rock")
   ) {
     resultDisplay.innerHTML = `You lost!`;
-  }
-  if (
+  } else if (
     (userChoice === "rock" && computerChoice === "scissors") ||
     (userChoice === "scissors" && computerChoice === "paper") ||
     (userChoice === "paper" && computerChoice === "rock")
